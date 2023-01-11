@@ -13,8 +13,8 @@ namespace Module4HW4.EntityConfigurations
             builder.Property(e => e.FirstName).IsRequired().HasMaxLength(50);
             builder.Property(e => e.LastName).IsRequired().HasMaxLength(50);
             builder.Property(e => e.HiredDate).IsRequired();
-            builder.HasOne(o => o.Office).WithMany(e => e.Employees).HasForeignKey(o => o.OfficeId).OnDelete(DeleteBehavior.Cascade);
-            builder.HasOne(t => t.Title).WithMany(e => e.Employees).HasForeignKey(t => t.TitleId).OnDelete(DeleteBehavior.Cascade);
+            builder.HasOne(e => e.Office).WithMany(o => o.Employees).HasForeignKey(e => e.OfficeId).OnDelete(DeleteBehavior.Cascade);
+            builder.HasOne(e => e.Title).WithMany(t => t.Employees).HasForeignKey(e => e.TitleId).OnDelete(DeleteBehavior.Cascade);
         }
     }
 }

@@ -7,5 +7,9 @@
         public decimal Budget { get; set; }
         public DateTime StartedDate { get; set; }
         public List<EmployeeProject> EmployeeProjects { get; set; } = new List<EmployeeProject>();
+
+        // * projects have 1 client
+        public int ClientId { get; set; }
+        public Client Client { get; set; }
     }
 }

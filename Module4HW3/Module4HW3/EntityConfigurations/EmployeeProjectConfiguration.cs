@@ -12,8 +12,8 @@ namespace Module4HW4.EntityConfigurations
             builder.Property(ep => ep.EmployeeProjectId).ValueGeneratedOnAdd();
             builder.Property(ep => ep.Rate).IsRequired().HasColumnType("money");
             builder.Property(ep => ep.StartedDate).IsRequired();
-            builder.HasOne(e => e.Employee).WithMany(ep => ep.EmployeeProjects).HasForeignKey(e => e.EmployeeId).OnDelete(DeleteBehavior.Cascade);
-            builder.HasOne(p => p.Project).WithMany(ep => ep.EmployeeProjects).HasForeignKey(p => p.ProjectId).OnDelete(DeleteBehavior.Cascade);
+            builder.HasOne(ep => ep.Employee).WithMany(e => e.EmployeeProjects).HasForeignKey(ep => ep.EmployeeId).OnDelete(DeleteBehavior.Cascade);
+            builder.HasOne(ep => ep.Project).WithMany(p => p.EmployeeProjects).HasForeignKey(ep => ep.ProjectId).OnDelete(DeleteBehavior.Cascade);
         }
     }
 }
